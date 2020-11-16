@@ -5,10 +5,20 @@ from django.shortcuts import HttpResponse
 
 
 def Home(request):
-    return HttpResponse("<h1>This is our Home page</h1>");
+      
+    context={
+          "name":"JaNith RathNayaka",
+          "number":12386656
+    }
+
+    return render(request, 'home.html',context)
 
 def Sport(request):
-    return HttpResponse("<h1>This is our latest sport news</h1>");
+
+    context={
+     "list":{"cricket","football","vollyball"}
+    }
+    return render(request, 'sport.html',context)
 
 def Contact(request):
-    return HttpResponse("<h1>This is Concat us</h1>");   
+    return render(request, 'contact.html')  
